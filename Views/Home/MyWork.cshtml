@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CLDV_Part_2.Models.Product>
+
+@{
+    ViewBag.Title = "My Works";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <h1>My Works - KhumaloCraft Emporium</h1>
+</header>
+
+<div class="container">
+    <div class="about">
+        <h2>About Our Work</h2>
+        <p>KhumaloCraft Emporium is dedicated to showcasing handcrafted products from artisans around the world. Our artisans use traditional techniques to create unique and high-quality works of art.</p>
+        <p>We believe in preserving traditional crafts and supporting skilled artisans by providing them with a platform to reach a global audience.</p>
+    </div>
+
+    <div class="my-works">
+        <h2>My Works</h2>
+        @foreach (var product in Model)
+        {
+            <div class="work">
+                <img src="~/images/@(product.Name).jpg" alt="@product.Name">
+                <h3>@product.Name</h3>
+                <p>Price: @product.Price</p>
+                <p>Category: @product.Category</p>
+                <p>Availability: @(product.Availability ? "Available" : "Not Available")</p>
+                <form asp-action="OrderProduct" method="post">
+                    <input type="hidden" name="productId" value="@product.ProductId" />
+                    <button type="submit">Order</button>
+                </form>
+            </div>
+        }
+    </div>
+
+    <div class="add-product">
+        <h2>Add New Product</h2>
+        <form asp-action="AddProduct" method="post">
+            <div>
+                <label for="name">Name</label>
+                <input id="name" name="Name" />
+            </div>
+            <div>
+                <label for="price">Price</label>
+                <input id="price" name="Price" />
+            </div>
+            <div>
+                <label for="category">Category</label>
+                <input id="category" name="Category" />
+            </div>
+            <div>
+                <label for="availability">Availability</label>
+                <input id="availability" name="Availability" type="checkbox" />
+            </div>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+
+</div>

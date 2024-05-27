@@ -1,0 +1,21 @@
+﻿@model List<Order>
+
+@{
+    ViewBag.Title = "Process Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Process Orders</h2>
+
+@foreach (var order in Model)
+{
+    <div>
+        <h3>@order.Product.Name</h3>
+        <p>Price: R@order.Product.Price</p>
+        <p>Order Date: @order.OrderDate</p>
+        <form asp-action="ProcessOrder" method="post">
+            <input type="hidden" name="orderId" value="@order.OrderId" />
+            <button type="submit">Mark as Processed</button>
+        </form>
+    </div>
+}

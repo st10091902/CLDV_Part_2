@@ -1,0 +1,17 @@
+﻿@model List<Order>
+
+@{
+    ViewBag.Title = "Order History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order History</h2>
+
+@foreach (var order in Model)
+{
+    <div>
+        <h3>@order.Product.Name</h3>
+        <p>Price: R@order.Product.Price</p>
+        <p>Order Date: @order.OrderDate</p>
+    </div>
+}

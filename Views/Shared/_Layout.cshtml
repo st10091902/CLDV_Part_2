@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - KhumaloCraft Emporium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+            .hero h1 {
+                font-size: 3em;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+        .my-works {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .my-works h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+        .work {
+            display: inline-block;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+            .work img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+
+            .work h3 {
+                margin-top: 10px;
+            }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .contact h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .contact p {
+                font-size: 1.2em;
+            }
+
+            .contact form {
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            .contact label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .contact input, .contact textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .contact button {
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                .contact button:hover {
+                    background-color: #555;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KhumaloCraft Emporium</h1>
+    </header>
+    <nav>
+        <a href="@Url.Action("Index", "Home")">Home</a>
+        <a href="@Url.Action("About", "Home")">About Us</a>
+        <a href="@Url.Action("MyWork", "Home")">My Works</a>
+        <a href="@Url.Action("Contact", "Home")">Contact</a>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
